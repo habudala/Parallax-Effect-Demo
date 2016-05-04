@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parallax with JavaScript</title>
+	<style type="text/css">
+		* {margin:0;
+			padding:0px;
+			border:0px;
+		}
+
+		#container {
+			/*height:100vh;*/
+			width:100%;
+			background:radial-gradient( white,grey);
+	
+		}
+
+		h1 {color:white;
+			text-align:center;
+			font-size:35px;}
+
+		#one {height:50px;
+			  width:50px;
+			  border:3px dashed blue;
+			  border-radius:50%;
+			  background-color:rgba(0,50,100,0.5);
+			 display:inline-block;
+			 margin-right:40px;
+			 margin-left:60px;
+			 margin-top:40px;
+			 position:relative;/* THIS IS THE MOST IMPORTANT SO I CAN USE "TOP" PROPERTY IN JS*/
+			 text-align:center;
+			 line-height: 50px;
+			 color:white;
+}
+
+		#two {height:75px;
+			  width:75px;
+			  border:3px dashed blue;
+			  border-radius:50%;
+			  background-color:rgba(0,50,100,0.5);
+			display:inline-block;
+			margin-right:60px;
+			margin-top:40px;
+			position:relative;/* THIS IS THE MOST IMPORTANT SO I CAN USE "TOP" PROPERTY IN JS*/
+			text-align:center;
+			line-height: 75px;
+			color:white;
+}
+
+		#three {height:100px;
+			  width:100px;
+			  border:3px dashed blue;
+			  border-radius:50%;
+			  background-color:rgba(0,50,100,0.5);
+			display:inline-block;
+			margin-right:70px;
+			margin-top:40px;
+			position:relative;/* THIS IS THE MOST IMPORTANT SO I CAN USE "TOP" PROPERTY IN JS*/
+			text-align:center;
+			line-height: 100px;
+			color:white;
+}
+
+		#four {height:125px;
+			  width:125px;
+			  border:3px dashed blue;
+			  border-radius:50%;
+			display:inline-block;
+			background-color:rgba(0,50,100,0.5);
+			margin-right:80px;
+			margin-top:40px;
+			position:relative;/* THIS IS THE MOST IMPORTANT SO I CAN USE "TOP" PROPERTY IN JS*/
+			text-align:center;
+			line-height: 125px;
+			color:white;
+}
+
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1>Parallax With JavaScript Demo</h1>
+
+		<!-- CREATING "PARALLAXING" DIVS  -->
+		<div id="one">
+		slowest
+		</div>
+		<div id="two">
+		slow
+		</div>
+		<div id="three">
+		medium
+		</div>
+		<div id="four">
+		faster
+		</div>
+
+		<!-- CREATING DUMMY TEXT SO I CAN SCROLL -->
+
+		<div id="five"> 
+
+			<br/>
+
+			<h2> Dummy Text</h2>
+			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+			<br/>
+
+			<h2> Dummy Text</h2>
+			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+			<br/>
+
+			<h2> Dummy Text</h2>
+			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+			<br/>
+
+			<h2> Dummy Text</h2>
+			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+			<br/>
+
+			<h2> Dummy Text</h2>
+			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+			<br/>
+
+			<h2> Dummy Text</h2>
+			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+			<br/>
+
+			<br/>
+
+			<h2> Dummy Text</h2>
+			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+			<br/>
+
+			<h2> Dummy Text</h2>
+			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+			<br/>
+			
+
+		</div>
+	</div>
+	<script type="text/javascript">
+
+	// 2) SCROLLING CALLS THE FUNCTION WHICH AFFECTS THE DIVS DIFFEENTLY
+		function parallax () {
+			//TARGETING DIV AND CHANGING THE TOP POSITION AS A FUNCTION OF THE YOFFSET PROPERTY (* 0.8)
+			var div1 = document.getElementById("one");
+			div1.style.top = 0.8 *pageYOffset + "px";
+			//TARGETING DIV AND CHANGING THE TOP POSITION AS A FUNCTION OF THE YOFFSET PROPERTY (NORMAL)
+			var div2 = document.getElementById("two");
+			div2.style.top = 1 *pageYOffset + "px";
+			//TARGETING DIV AND CHANGING THE TOP POSITION AS A FUNCTION OF THE YOFFSET PROPERTY (*1.2) FASTER
+			var div3 = document.getElementById("three");
+			div3.style.top = 1.2 *pageYOffset + "px";
+			//TARGETING DIV AND CHANGING THE TOP POSITION AS A FUNCTION OF THE YOFFSET PROPERTY (* 1.5)EVEN FASTER
+			var div4 = document.getElementById("four");
+			div4.style.top = 1.5 *pageYOffset + "px";
+		}
+
+		// 1) ADDING EVENT LISTENER TO WINDOW TO DETECT ANY SCROLLING
+
+		window.addEventListener("scroll",parallax,false); 
+
+	</script>
+</body>
+</html>
